@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Grocery</title>
+    </head>
+    <body>
+        <h2>Grocery Checklist</h2>
+        <form action ="">
+            <!--Not storing on server  -->
+            <hr/>
+            <p>Today's 
+                <input type="text" name="date" value="Date: ">
+            </p>
+            <hr/>
+            <p>
+                <input type="checkbox" name="groceries" value="milk"> Milk
+                <input type="checkbox" name="groceries" value="eggs"> Eggs
+                <input type="checkbox" name="groceries" value="bread"> Bread
+                <input type="checkbox" name="groceries" value="cheese"> Cheese
+                <input type="checkbox" name="groceries" value="ham"> Ham
+                <input type="checkbox" name="groceries" value="corn"> Corn
+            </p>
+            <hr/>
+            <p>Wine age
+                <input type ="radio" name ="cheese age" value ="under20" checked ="checked"> 0-19
+                <input type ="radio" name ="cheese age" value ="20-35" checked ="checked"> 20-35
+                <input type ="radio" name ="cheese age" value ="36-50" checked ="checked"> 36-50
+                <input type ="radio" name ="cheese age" value ="over50" checked ="checked"> Over 50
+            </p>
+            <hr/>
+            <p>
+            <label for="groceries">Choose a grocery item:</label>
+            <select name="groceries" id="groceries">
+              <option value="milk">Milk</option>
+              <option value="bread">Bread</option>
+              <option value="eggs">Eggs</option>
+              <option value="cheese">Cheese</option>
+              <option value="fruits">Fruits</option>
+              <option value="vegetables">Vegetables</option>
+            </select>
+            </p>
+            <hr/>
+            <p>
+                First name <input type="text" name="First name">
+                Last name <input type="text" name="Last name">
+            </p>
+            <hr/>
+            <p>
+                <input type="Submit" name="Submit">
+                <input type="Reset" name="Reset">
+            </p>
+            <hr/>
+            <p>
+                <textarea name="feedback" rows="4" cols="50" placeholder="Enter your feedback here..."></textarea>
+            </p>
+            <hr/>
+            </form>
+    </body>
+</html>
