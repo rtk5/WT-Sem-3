@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<body>
-    <p id ="demo"></p>
-    <script>
-        x=5; // assign 5 to x
 
-        elem = document.getElementById("demo"); //find an element
-        elem.innerHTML = x;
-
-        var x; // Declare x
-    </script>   
-</body>
-</html> 
+<html>
+    <head>
+        <title>My first javascript </title>
+    </head>
+    <body>
+        <script type="text/javascript" >
+            var x=new Object();
+            x.name="Rohan"
+            x.age="19"
+            for(i in x)
+            document.write(i+"=>"+x[i]+"<br>");
+            var num=new Number("111");
+            var str=new String("10 days");
+            document.write(str);
+            var dt=new Date(2024,10,20);
+            document.write(dt);
+            document.write(num);
+            var num2= new Number("10 days");
+            document.write(dt);
+        </script>
+        <p>This is my first javascript program </p>
+    </body>
+    </html>
