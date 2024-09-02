@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function Employee(fname,lname) {
+        this.firstName = fname;
+        this.lastName = lname;
+        this.showName = function() {
+            alert(this.firstName + " " + this.lastName);
+        };
+    }
+    var emp = new Employee("Rithvik","Matta")
+    emp.showName();
+</script>    
+</body>
+</html>
