@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Arrow function</title>
+    <script>
+        // arrow function
+        const add = (a,b) => a+b;
+
+        console.log(add(2,3));
+        const square = x => x*x;
+        console.log(square(4));
+        const greet = () => "Hello,World!";
+        console.log(greet());
+
+        const createUser = (name,age) => ({name,age});
+        console.log(createUser('Alice',25));
+    </script>
+</head>
+<body onload="add()">
+    <h1>Hello world</h1>
+
+</body>
+</html>

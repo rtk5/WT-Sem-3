@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Local and global variables showing effect Javascript scope rules</title>
+    <script>
+        var j = 6;
+        //global variable declaration and intialization
+        function test() {
+            var j; //lo0cal variable
+            j = 7;
+            return;
+        }
+        test();
+        window.alert(j);            //6
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

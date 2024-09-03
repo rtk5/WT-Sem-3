@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(first,last,age,eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+        Person.prototype.name = function() {
+            document.write(this.firstName + " " + this.lastName);
+        };
+
+        var p1= new Person("John","Doe",50,"blue");
+        p1.name();
+    </script>
+</body>
+
+</html>
