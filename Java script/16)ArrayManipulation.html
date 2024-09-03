@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ArrayManipulation</title>
+</head>
+<body>
+    <script>
+        let fruits = ['apple', 'banana', 'cherry'];
+        console.log(fruits);  // ['apple', 'banana', 'cherry']
+        
+        fruits.push('orange');
+        console.log(fruits);  // ['apple', 'banana', 'cherry', 'orange']
+        
+        var fr2 = fruits.unshift('grape');
+        console.log(fr2);  // 5 (new length of the array)
+
+        console.log(fruits);  // ['grape', 'apple', 'banana', 'cherry', 'orange']
+
+        var fr3 = fruits.pop();
+        console.log(fr3);  // 'orange' (the removed element)
+
+        console.log(fruits);  // ['grape', 'apple', 'banana', 'cherry']
+    </script>
+</body>
+</html>
