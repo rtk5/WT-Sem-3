@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <title>Olympics Games 2024 Paris Survey Form</title>
     <style>
@@ -8,10 +9,12 @@
             margin: 0;
             padding: 20px;
         }
+
         h1 {
             text-align: center;
             color: #000080;
         }
+
         img {
             position: absolute;
             top: 10px;
@@ -19,31 +22,43 @@
             width: 100px;
             height: auto;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             background-color: #e6f7ff;
             border: 2px solid #000080;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #000080;
             padding: 10px;
             text-align: left;
         }
+
         th {
             background-color: #000080;
             color: white;
         }
+
         form {
             background-color: #ffffff;
             padding: 20px;
+            width:50%;
+            margin:50px auto;
             border: 2px solid #000080;
+            border-collapse: collapse;
+            border-radius: 10px;
             margin-top: 20px;
+            /* margin:150px auto; */
         }
+
         label {
             display: inline-block;
             width: 150px;
         }
+
         input[type="text"],
         input[type="email"],
         input[type="tel"],
@@ -51,12 +66,16 @@
             width: 200px;
             padding: 5px;
         }
+
         .required {
             color: red;
         }
+
         .form-buttons {
             margin-top: 10px;
+
         }
+
         .form-buttons input {
             padding: 10px;
             margin-right: 10px;
@@ -64,7 +83,9 @@
             color: white;
             border: none;
             cursor: pointer;
+            width:50%;
         }
+
         .form-buttons input:hover {
             background-color: #00509e;
         }
@@ -107,43 +128,46 @@
     <h2>Olympics Games 2024 Highlights</h2>
     <table>
         <tr>
-            <th>Event</th>
-            <th>Date</th>
-            <th>Venue</th>
+            <th colspan ="2">Event</th>
+            <th >Date</th>
+            <th>Location</th>
         </tr>
         <tr>
-            <td>Opening Ceremony</td>
-            <td>26th July 2024</td>
-            <td rowspan="3">Paris, France</td>
+            <td rowspan="2">Opening Ceremony</td>
+            <td>Main Stadium</td>
+            <td>26 July 2024</td>
+            <td>Paris, France</td>
         </tr>
         <tr>
-            <td>Athletics Finals</td>
-            <td>August 5 - 11, 2024</td>
+            <td>Beach Events</td>
+            <td>27 July 2024</td>
+            <td>Nice, France</td>
         </tr>
         <tr>
-            <td>Closing Ceremony</td>
-            <td>11th August 2024</td>
+            <td colspan="2">Closing Ceremony</td>
+            <td >11 August 2024</td>
+            <td>Paris, France</td>
         </tr>
     </table>
 
     <h2>Survey Form</h2>
     <form onsubmit="return validateForm()">
-        <label for="name">Name: <span class="required">*</span></label>
+        <label for="name">Name:  </label>
         <input type="text" id="name" name="name" required><br><br>
 
-        <label for="email">Email: <span class="required">*</span></label>
+        <label for="email">Email:  </label>
         <input type="email" id="email" name="email" required><br><br>
 
-        <label for="phone">Phone: <span class="required">*</span></label>
+        <label for="phone">Phone:  </label>
         <input type="tel" id="phone" name="phone" required pattern="\d{10}" placeholder="10-digit number"><br><br>
 
-        <label>Gender: <span class="required">*</span></label>
+        <label>Gender:  </label>
         <input type="radio" id="male" name="gender" value="Male" required>
         <label for="male">Male</label>
         <input type="radio" id="female" name="gender" value="Female">
         <label for="female">Female</label><br><br>
 
-        <label for="event">Favorite Event: <span class="required">*</span></label>
+        <label for="event">Favorite Event:  </label>
         <select id="event" name="event" required>
             <option value="">Select Event</option>
             <option value="Athletics">Athletics</option>
@@ -152,16 +176,16 @@
             <option value="Basketball">Basketball</option>
         </select><br><br>
 
-        <label for="date">Preferred Date: <span class="required">*</span></label>
-        <input type="text" id="date" name="date" placeholder="dd-mm-yyyy" required><br><br>
+        <label for="date">Preferred Date:  </label>
+        <input type="date" id="date" name="date" required><br><br>
 
-        <label>
+
             <input type="checkbox" id="terms" name="terms" required>
             I agree to the terms and conditions
-        </label><br><br>
+       <br><br>
 
         <div class="form-buttons">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit"><br><br>
             <input type="reset" value="Reset">
         </div>
     </form>
