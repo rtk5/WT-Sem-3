@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<head>
+    <title>Olympics Games 2024 Paris Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #000080;
+        }
+        img {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+            height: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #e6f7ff;
+            border: 2px solid #000080;
+        }
+        th, td {
+            border: 1px solid #000080;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #000080;
+            color: white;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 2px solid #000080;
+            margin-top: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        .required {
+            color: red;
+        }
+        .form-buttons {
+            margin-top: 10px;
+        }
+        .form-buttons input {
+            padding: 10px;
+            margin-right: 10px;
+            background-color: #000080;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-buttons input:hover {
+            background-color: #00509e;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let checkbox = document.getElementById("terms").checked;
+
+            if (name === "" || email === "" || phone === "") {
+                alert("All fields are required.");
+                return false;
+            }
+            let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            if (phone.length !== 10 || isNaN(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+            if (!checkbox) {
+                alert("Please agree to the terms and conditions");
+                return false;
+            }
+            alert("Thank you, successfully submitted " + name + "!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Olympics Games 2024 Paris</h1>
+    <img src="Olympic_rings_without_rims.svg" alt="Olympics Logo">
+
+    <h2>Olympics Games 2024 Highlights</h2>
+    <table>
+        <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Venue</th>
+        </tr>
+        <tr>
+            <td>Opening Ceremony</td>
+            <td>26th July 2024</td>
+            <td rowspan="3">Paris, France</td>
+        </tr>
+        <tr>
+            <td>Athletics Finals</td>
+            <td>August 5 - 11, 2024</td>
+        </tr>
+        <tr>
+            <td>Closing Ceremony</td>
+            <td>11th August 2024</td>
+        </tr>
+    </table>
+
+    <h2>Survey Form</h2>
+    <form onsubmit="return validateForm()">
+        <label for="name">Name: <span class="required">*</span></label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email: <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone: <span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" required pattern="\d{10}" placeholder="10-digit number"><br><br>
+
+        <label>Gender: <span class="required">*</span></label>
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label><br><br>
+
+        <label for="event">Favorite Event: <span class="required">*</span></label>
+        <select id="event" name="event" required>
+            <option value="">Select Event</option>
+            <option value="Athletics">Athletics</option>
+            <option value="Swimming">Swimming</option>
+            <option value="Gymnastics">Gymnastics</option>
+            <option value="Basketball">Basketball</option>
+        </select><br><br>
+
+        <label for="date">Preferred Date: <span class="required">*</span></label>
+        <input type="text" id="date" name="date" placeholder="dd-mm-yyyy" required><br><br>
+
+        <label>
+            <input type="checkbox" id="terms" name="terms" required>
+            I agree to the terms and conditions
+        </label><br><br>
+
+        <div class="form-buttons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+</body>
+
+</html>
