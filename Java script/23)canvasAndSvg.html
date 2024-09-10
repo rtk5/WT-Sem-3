@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init() {
+            var c1 = document.querySelector("#c1");
+            var ctx = c1.getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.beginPath();
+            ctx.arc(200, 100, 80, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <canvas id="c1" width="400" height="200" style="border:1px solid #000000;">
+    </canvas>
+    <svg width="400" height="200" style="border:1px solid #000000;"></svg>
+</body>
+
+</html>

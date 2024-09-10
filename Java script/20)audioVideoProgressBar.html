@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Video and Progress Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #progressBar {
+            width: 400px;
+            height: 20px;
+            background-color: #e0e0e0;
+            margin-top: 10px;
+        }
+        #progress {
+            height: 100%;
+            background-color: #76c7c0;
+            width: 0%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Audio Video Player with Progress Bar</h1>
+    
+    <video id="v1" controls height="200px" width="400px">
+        <source src="Video from Rithvik Matta.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="progressBar">
+        <div id="progress"></div>
+    </div>
+
+    <script>
+        const video = document.getElementById('v1');
+        const progressBar = document.getElementById('progressBar');
+        const progress = document.getElementById('progress');
+
+        video.addEventListener('timeupdate', function() {
+            const percentage = (video.currentTime / video.duration) * 100;
+            progress.style.width = percentage + '%';
+        });
+    </script>
+
+</body>
+</html>
