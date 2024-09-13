@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <p id="pid">Paragraph1</p>
+    <p id="pid1" class="pcls">Paragraph 2</p>
+    <p>Paragraph 3
+    <input type="text" id="textbook"></p>
+    <div>
+        <h3>Heading3</h3>
+        <h4>Heading4</h4>
+    </div>
+    <script>
+        console.log("Web page loaded");
+        $("p").css("color","darkblue");
+        $("#pid1").css("color","red");
+        $(".pcls").css("background-color","yellow");
+        $("div").empty();
+    </script>
+</body>
+</html>
