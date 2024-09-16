@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("li").hide();
+            });
+
+            $("li").click(function() {
+                $(this).hide();
+            });
+
+            $("li:even").css("color", "blue");
+
+            console.log($("li#g1").html());
+
+            $("li#g1").html("AFLL");
+        });
+    </script>
+</head>
+<body>
+    <p>Subjects</p>
+    <ul>
+        <li>Data Structures</li>
+        <li id="g1">Web technologies</li>
+        <li>Algorithms</li>
+        <li>Operating Systems</li>
+    </ul>
+
+    <button>Hide all subjects</button>
+</body>
+</html>
