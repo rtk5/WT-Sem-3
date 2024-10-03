@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .container {
+            width: 300px;
+            height: 150px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="filterMe">-----------------------------</p>
+        <p class="filterMe">Web Tech.</p>
+        <p class="filterMe">-----------------------------</p>
+    </div>
+    
+    <br>
+    
+    <button id="prependBtn">Prepend Text</button>
+    <button id="appendBtn">Append Text</button>
+    <button id="hideBtn">Hide Div</button>
+    <button id="unhideBtn">Unhide Div</button>
+    <button id="changeFilterMeColorBtn">Change Text Color</button> <!-- Single button -->
+
+    <script>
+        $(document).ready(function () {
+            $("#prependBtn").click(function () {
+                $(".container").fadeOut(500, function () {
+                    $(".container").prepend("<p class='filterMe'>jQuery is awesome!</p>");
+                    $(".container").fadeIn(500);
+                });
+            });
+
+            $("#appendBtn").click(function () {
+                $(".container").slideUp(500).append("<p class='filterMe'>jQuery is awesome!</p>").slideDown(500, function () {
+                    var newHeight = $(".container").prop('scrollHeight');
+                    $(".container").height(newHeight);
+                });
+            });
+
+            $("#hideBtn").click(function () {
+                $(".container").fadeOut(500);
+            });
+
+            $("#unhideBtn").click(function () {
+                $(".container").fadeOut(500).fadeIn(500);
+            });
+
+            // Change the text color of all elements with the class .filterMe
+            $("#changeFilterMeColorBtn").click(function () {
+                $(".filterMe").each(function () {
+                    $(this).css("color", getRandomColor());
+                });
+            });
+
+            // Function to generate a random color
+            function getRandomColor() {
+                return '#' + Math.floor(Math.random() * 16777215).toString(16);
+            }
+        });
+    </script>
+</body>
+
+</html>
