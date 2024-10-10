@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const colors = ["red", "green", "blue", "yellow", "orange"];
+
+        class CustomText extends React.Component {
+            constructor(props) {
+                super(props);
+                this.myTextRef = React.createRef();
+            }
+
+            changeText = () => {
+                const i = Math.floor(Math.random() * colors.length);
+                this.myTextRef.current.innerHTML = colors[i];
+                this.myTextRef.current.style.color = colors[i];
+            };
+
+            render() {
+                return (
+                    <div>
+                        <h1 ref={this.myTextRef}>Click the button to change my color!</h1>
+                        <button onClick={this.changeText}>Change Text Color</button>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(<CustomText />, document.querySelector('#root'));
+    </script>
+</body>
+
+</html>
