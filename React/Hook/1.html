@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.18.10/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        function Timer() {
+            const [count, setCount] = React.useState(0);
+            
+            React.useEffect(() => {
+                const timer = setTimeout(() => {
+                    setCount((prevCount) => prevCount + 1);
+                }, 1000);
+
+                // Cleanup function to clear the timeout
+                return () => clearTimeout(timer);
+            }, [count]); // Run effect when `count` changes
+            
+            return <h1>I have rendered {count} times!</h1>;
+        }
+
+        // Rendering of the React component Timer
+        const root = ReactDOM.createRoot(document.querySelector("#container"));
+        root.render(<Timer />);
+    </script>
+</body>
+
+</html>
