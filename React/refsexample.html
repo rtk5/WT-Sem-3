@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title>React ref example</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+</head>
+<body>
+  <div id="container"></div>
+  <script type="text/babel">
+//React code
+//creation of class component MyComponent
+
+class MyComponent extends React.Component
+{
+   constructor(props)
+ {
+        super(props);
+
+        // Creating a ref using React.createRef()
+
+        this.myRef = React.createRef();
+      }
+//DOM tree is created and react class component is mounted
+  componentDidMount()
+ {
+        // Accessing the DOM node when the component mounts
+
+        const node = this.myRef.current;
+
+        console.log('DOM Node:', node);
+      }
+//mandatory life cycle method to render the react component
+ render()
+ {
+        return (
+          // Attaching the ref to the div element
+          <div ref={this.myRef} style={{ width: '100px', height: '100px', backgroundColor: 'lightblue' }}>
+            Ref Demo
+          </div>
+        );
+      }
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("container"));
+    root.render(
+      <div>
+        <MyComponent />
+      </div>
+    );
+  </script>
+</body>
+</html>

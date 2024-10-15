@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React</title>
+
+    <!-- Include React and ReactDOM libraries -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <!-- Include Babel library for JSX transformation -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      // Your React component code
+      function Counter() {
+        const [count, setCount] = React.useState(0);
+
+        const increment = () => {
+          setCount(count + 1);
+        };
+
+        return (
+          <div>
+            <p>Count: {count}</p>
+            <button onClick={increment}>Increment</button>
+          </div>
+        );
+      }
+
+      // Render your React component
+      ReactDOM.render(<Counter />, document.querySelector("#container"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <title>React component lifecycle method Illustration</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <style>
+      h1,
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      var des = document.querySelector("#container");
+
+//react code
+//Component for actual countdown logic.
+     class Counter extends React.Component 
+      {
+        //Initializes the component's state with a seconds value(coming from the start prop)
+        constructor(props, context) 
+        {
+          super(props, context);
+          this.state = {
+            seconds: props.start,
+          };
+          // Binds the `timer` function to the component's context
+         //The timer function is bound to the component to ensure it has access to this.
+          this.timer = this.timer.bind(this);
+        }
+
+        componentDidMount() 
+         {
+          //Starts the countdown timer, calling `timer` every 1 second.
+          this.t = setInterval(this.timer, 1000);
+        }
+//timer function: Decreases the seconds value by 1 every second.
+        timer()
+        {
+          this.setState((prevState) => {
+            return {
+              seconds: prevState.seconds - 1,
+            };
+          });
+        }
+
+/*componentDidUpdate: This method is called every time the component is updated.
+ Here, it logs the previous seconds value and checks if the countdown has reached 0.
+ If so, it unmounts the component from the DOM using ReactDOM.unmountComponentAtNode.*/
+
+
+        componentDidUpdate(prevProps, prevState)
+       {
+          console.log("Component updated from: " + prevState.seconds);
+          if (this.state.seconds == 0) {
+            ReactDOM.unmountComponentAtNode(
+              document.querySelector("#container")
+            );
+          }
+        }
+        componentWillUnmount()
+        {
+          console.log("Component is about to be unmounted!");
+          clearInterval(this.t);
+        }
+
+        render() {
+          return <h1> {this.state.seconds}</h1>;
+        }
+      }
+//second react class component Counterdisplay
+
+  class CounterDisplay extends React.Component 
+  {
+        render()
+       {
+          return 
+          (
+            <div>
+              <Counter start={this.props.start} />
+              <h2>seconds</h2>
+              <h2>Before the page freezes...</h2>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(
+        <div>
+          <CounterDisplay start="30" />
+          <CounterDisplay start="40" />
+        </div>,
+        document.querySelector("#container")
+      );
+    </script>
+  </body>
+</html>

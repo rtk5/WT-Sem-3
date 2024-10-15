@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>React</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <!-- 
+	-->
+    <div id="container"></div>
+    <script type="text/babel">
+      class ResImage extends React.Component {
+        render() {
+          return (
+            <div>
+              <img src={this.props.src}></img>
+            </div>
+          );
+        }
+      }
+      class ResLink extends React.Component {
+        render() {
+          return (
+            <div>
+              <a href={this.props.link}> {this.props.linktext} </a>
+            </div>
+          );
+        }
+      }
+      class ResCaption extends React.Component {
+        render() {
+          return (
+            <div>
+              <p>{this.props.caption}</p>
+            </div>
+          );
+        }
+      }
+
+      class SrchResult extends React.Component {
+        render() {
+          return (
+            <div>
+              <ResImage {...this.props} />
+              <ResCaption {...this.props} />
+              <ResLink {...this.props} />
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(
+        <div>
+          <SrchResult
+            src="tiger.jpg"
+            link="https://www.britannica.com/animal/tiger"
+            linktext="britannica.com"
+            caption="tiger | Facts, Information and Habitat…"
+          />
+
+          <SrchResult
+            src="peacock.jpg"
+            link="https://www.britannica.com/animal/peacock"
+            linktext="britannica.com"
+            caption="peacock | Facts and Habitat | Britannica"
+          />
+        </div>,
+        document.querySelector("#container")
+      );
+    </script>
+  </body>
+</html>
