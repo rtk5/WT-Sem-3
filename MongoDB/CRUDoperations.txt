@@ -1,0 +1,48 @@
+1.Create New database (newdb)
+test> use newdb
+switched to db newdb
+
+2. Create a collection under newdb
+newdb> db.createCollection("student");
+
+//
+{ ok: 1 }
+
+
+3.Insertone record
+
+newdb> db.student.insertOne({"name":"Alice","srn":"123","dept":"CSE"});
+
+4.
+InsertMany
+newdb> db.student.insertMany([{"name":"Bob","srn":"124","dept":"CSE"}, {"name":"Tim","srn":"125","dept":"ECE"}]);
+
+5.Find
+
+newdb> db.student.find();
+
+	
+
+6.Find
+newdb> db.student.find({name:"Tim"});
+newdb> db.student.find({name:"Alice"});
+
+7.Updateone
+
+newdb> db.student.updateOne({name:"Alice"},{$set:{dept:"ECE"}});
+
+
+8.Updatemany
+
+
+newdb> db.student.updateMany({dept:"ECE"},{$set:{dept:"CSE"}});
+
+9.DeleteOne
+newdb> db.student.deleteOne({srn:"125"});
+
+10.
+
+
+
+
+db.myCollection.find().limit(5)
